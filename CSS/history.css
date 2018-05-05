@@ -1,0 +1,156 @@
+
+body{
+    margin: 20px 100px ;
+    background-color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.outerbox{
+    width: 1150px;
+    overflow: hidden;
+}
+
+.sliderbox{
+    position: relative;
+    width: 3600px;
+    animation-name: slideranimation;
+    animation-duration: 20s;
+    animation-iteration-count: infinite
+}
+
+div img{
+  
+    float: left;
+}
+
+@keyframes slideranimation{
+    0%{
+        left: 0px;
+
+    }
+    20%/* 4second*/
+    {
+        left: 0px;
+    }
+    25% /* 5 second*/
+    {
+        left: -800px;
+    }
+    45% /*9 second*/
+    {
+        left: -800;
+    }
+    50% /*10 second*/
+    {
+        left: -1600;
+    }
+    70% /*14 second*/
+    {
+        left: -1600;
+    }
+
+}
+
+ul {
+    list-style-type: none;
+    overflow: hidden;
+    margin:0px ;
+    padding: 0px;
+    background-color: rgb(12, 12, 12);
+}
+
+li {
+    list-style: none;
+    float: left;
+   
+}
+p{
+    text-align:center;
+}
+
+li a {
+    display: block;
+    color: rgb(253, 249, 249);
+    text-align: center;
+    padding: 10px 146.6px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: rgb(136, 133, 133);
+}
+
+
+figure img{
+    border-radius: 50%;
+    width: 250px;
+    height: 300px;
+   box-shadow:  10px 10px 50px grey;
+ }
+figure{
+    text-align: center;
+
+}
+fieldset{
+    margin: 20px 0;
+    border: dashed rgb(124, 120, 120);
+}
+
+legend{
+    font: 35px bold;
+    color: rgb(124, 120, 120);
+   display: block;
+   text-align: center;
+   border: dashed ;
+   
+  
+}
+
+footer{
+    background-color: rgb(54, 53, 53);
+    color : white;
+    text-align: center;
+ 
+}
+
+article{
+    margin: 25px;
+    padding: 10px;
+}
+p{
+    text-align: left;
+    font-size: 20px;
+}
+
+/*resposive*/
+
+@media screen and (max-width:1300px) {
+ 
+   
+    li a {
+        padding: 10px 125.6px;
+        text-decoration: none ;
+      
+    }
+    .outerbox{
+        width: 1050px;
+        overflow: hidden;
+    }
+}
+
+@media screen and (max-width:800px) {
+ 
+   ul {
+        display: grid;
+        grid-template-columns: 1fr ;
+      
+    }
+    .outerbox{
+        width: 460px;
+        overflow: hidden;
+    }
+}
+
+
+
