@@ -5,11 +5,15 @@ body{
     font-family: Arial, Helvetica, sans-serif;;
 }
 
+/*ส่วนของไสลด์บล็อกใน header tag element */
 .outerbox{
     width: 1250px;
     overflow: hidden;
 }
-
+/*เป็นการสร้าง slibox ให้ attribute position มีค่าเท่ากับ relative มี attribite width มีค่าเป็น 3600px 
+attribute animation-name มีค่าเท่ากับ sligeranimation คือเป็นการตั้งชื่อของanimation 
+attribute animation-duration มีค่าเท่ากับ 20s คือการที่ไสลด์วนครบรอบใช้เวลา 20วินาที
+และattribute animation-iteration-count มีค่าเท่ากับ infinite คือการเล่น animation จะเล่นเรื่อยๆ*/
 .sliderbox{
     position: relative;
     width: 3600px;
@@ -17,12 +21,13 @@ body{
     animation-duration: 20s;
     animation-iteration-count: infinite
 }
-
+/*ใช้คำสั่ง float เพื่อให้เลื่อนไปได้ซ้ายเรื่อยๆ */
 div img{
   
     float: left;
 }
 
+/*เป็นการกำหนดว่าภาพจะเลื่อนกี่เปอร์เซ็น และเลื่อยเป็นหน่วย px ในทุกๆกี่วินาที */
 @keyframes slideranimation{
     0%{
         left: 0px;
@@ -38,19 +43,19 @@ div img{
     }
     45% /*9 second*/
     {
-        left: -800;
+        left: -800px;
     }
     50% /*10 second*/
     {
-        left: -1600;
+        left: -1600px;
     }
     70% /*14 second*/
     {
-        left: -1600;
+        left: -1600px;
     }
 
 }
-
+/*เมนูกำหนด display เป็น block */
 ul {
     list-style-type: none;
     overflow: hidden;
@@ -75,11 +80,11 @@ li a {
     padding: 10px 161.2px;
     text-decoration: none;
 }
-
+/*เมื่อมีเมาส์ไปคลิปที่เมนูจะเปลี่ยนสีแบล็กกราวเป็นสีเทา*/
 li a:hover {
     background-color: rgb(136, 133, 133);
 }
-
+/*ส่วนของ main tag element*/
 img.profile{
     width: 240px;
     height: 250px;
@@ -107,7 +112,13 @@ legend{
    display: block;
   
 }
+#Credit{
+    margin: 5px;
+    padding: 0px;
+    color:black;
+}
 
+/*responsive*/
 @media screen and (max-width:1300px)  {
    
     li a {
@@ -125,7 +136,7 @@ legend{
 
 }
 
-@media screen and (max-width:700px)  {
+@media screen and (max-width:850px)  {
   
     li a {
         display: block;
@@ -135,10 +146,33 @@ legend{
         text-decoration: none;
     }
 
-    
     .outerbox{
-        width: 460px;
+        width: 100%;
         overflow: hidden;
     }
 
+}
+
+@media screen and (max-width:360px)  {
+ 
+body{
+    margin: 20px 10px ;
+}
+
+    li a {
+        display: block;
+        color: rgb(253, 249, 249);
+        text-align: center;
+        padding: 12px 8.7px ;
+        text-decoration: none;
+    }
+    .outerbox{
+        width: 100%;
+        overflow: hidden; /*เป็นการกำหนดให้สไลด์บล็อกเป็น 100% เพื่อให้ภาพไม่ยืดหรือขนาดใหญ่กว่าขอบที่เราตั้งไว้*/
+    }
+
+fieldset{  
+        border:None;
+   
+    }
 }
