@@ -1,0 +1,262 @@
+/*ส่วนของ body*/
+body{
+    margin: 20px 120px  20px 120px ;
+    background-color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+/*ส่วนของไสลด์บล็อกใน header tag element */
+.outerbox{
+    width: 1105px;
+    overflow: hidden;
+}
+/*เป็นการสร้าง slibox ให้ attribute position มีค่าเท่ากับ relative มี attribite width มีค่าเป็น 3600px 
+attribute animation-name มีค่าเท่ากับ sligeranimation คือเป็นการตั้งชื่อของanimation 
+attribute animation-duration มีค่าเท่ากับ 20s คือการที่ไสลด์วนครบรอบใช้เวลา 20วินาที
+และattribute animation-iteration-count มีค่าเท่ากับ infinite คือการเล่น animation จะเล่นเรื่อยๆ*/
+.sliderbox{
+    position: relative;
+    width: 3600px;
+    animation-name: slideranimation;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+}
+/*ใช้ Attribute float ให้ภาพเลื่อนไปด้านซ้าย*/
+div img{
+  
+    float: left;
+    height: 100px;
+}
+/*เป็นการกำหนดว่าภาพจะเลื่อนกี่เปอร์เซ็น และเลื่อยเป็นหน่วย px ในทุกๆกี่วินาที */
+@keyframes slideranimation{
+    0%{
+        left: 0px;
+
+    }
+    20%/* 4second*/
+    {
+        left: 0px;
+    }
+    25% /* 5 second*/
+    {
+        left: -800px;
+    }
+    45% /*9 second*/
+    {
+        left: -800;
+    }
+    50% /*10 second*/
+    {
+        left: -1600;
+    }
+    70% /*14 second*/
+    {
+        left: -1600;
+    }
+
+}
+/*ส่วนของเมนูกำหนด attribute display มี value เป็น block */
+ul {
+    list-style-type: none;
+    overflow: hidden;
+    margin:0px ;
+    padding: 0px;
+    background-color: rgb(12, 12, 12);
+}
+
+li {
+    list-style: none;
+    float: left; 
+}
+
+li a {
+    display: block;
+    color: rgb(253, 249, 249);
+    text-align: center;
+    padding: 10px 138px;
+    text-decoration: none;
+}
+/*เมื่อมีเมาส์ไปคลิกที่ element li จะเปลี่ยนสีแบล็กกราวเป็นสีเทา*/
+li a:hover {
+    background-color: rgb(136, 133, 133);
+}
+
+main{
+    display: grid;
+    grid-template-columns: 40fr 15fr  ;
+}
+
+footer{
+    background-color: rgb(54, 53, 53);
+    color : white;
+    text-align: center;
+    width: 700px;
+}
+
+p{
+    text-align:left;
+}
+/*ใช้เพื่อให้เป็นขอบรอบ main element*/
+fieldset{
+    margin: 5px ;
+    border: dashed rgb(0, 0, 0);
+   
+}
+/*ให้สามาถแสดงข้อความระหว่างขอบของ fieldset ได้*/
+legend{
+    display: block;
+    border: dashed;
+    font-size:30px ;
+    grid-column:  span 2; 
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    font-weight: 900;
+
+}
+/*เป็นส่วนที่ตั้งค่าเป็น attribute position มีค่า value เท่ากับ fix เพราะต้องการให้ aside เลื่ออนตามเเถบ scoll bar*/
+aside{
+  
+    position:fixed;
+    width:300px;
+    height:400px;
+    background:red;
+    right:140px;
+    top:210px;
+    padding: 10px;
+}
+p.voc{
+    text-align: left;
+}
+
+footer{
+    background-color: rgb(54, 53, 53);
+    color : white;
+    text-align: center;
+    padding: 10px;
+}
+
+figure img{
+    border-radius: 10%;
+}
+
+section{
+    padding: 10px 20px;
+    margin: 10px;
+    color: rgb(180, 56, 25);
+}
+
+p.Moral{
+    text-align: center;
+}
+/*เป็นการใช้ selector psudo ในการเลือก section element*/
+section:nth-child(2){
+    text-align: center;
+}
+section:nth-child(4){
+    text-align: center;
+}
+section:nth-child(6){
+    text-align: center;
+}
+#Credit{
+    margin: 5px;
+    padding: 0px;
+    color:black;
+}
+
+/* responsive*/
+
+@media screen and (max-width:1000px) {
+  
+    nav{
+        display: grid;
+        grid-template-columns: 2fr 1fr ;
+    }
+    /*Attribute display มีค่า Value เป็น flexbox เพื่อให้เมนูเป็นคอลัมเดียว และห่อหุ่ม li element ไว้*/
+    ul {
+        display: flex;
+        flex-direction: column ;
+        padding: 5px 5px;
+
+       }
+      /*/*เป็นส่วนที่ตั้งค่าเป็น attribute position มีค่า value เท่ากับ fix เพราะต้องการให้ aside เลื่ออนตามเเถบ scoll bar*/
+       aside{
+         position:fixed;
+         width:200px;
+         height:400px;
+         background:red;
+         right:20px;
+         top:120px;
+         padding: 10px;
+        }
+       /*แบ่งคอลัมของ display เป๊น 1ส่วนกับ3 ส่วน เพื่อให้มีที่ว่างสำหรับใส่ element aside*/
+        main{
+            display: grid;
+            grid-template-columns: 1fr  3fr  ;
+        }
+    
+        footer{
+            background-color: rgb(54, 53, 53);
+            color : white;
+            text-align: center;
+            padding: 10px;
+            width: 400px;
+        }
+
+        legend{
+            display: block;
+            border: dashed;
+            font-size:20px ;
+            grid-column:  span 2; 
+            padding: 10px;
+            margin: 10px;
+            text-align: left;
+            font-weight: 900;
+        
+        }
+        .outerbox{
+            width: 100%; /*เป็นการกำหนดให้สไลด์บล็อกเป็น 100% เพื่อให้ภาพไม่ยืดหรือขนาดใหญ่กว่าขอบที่เราตั้งไว้*/
+        }
+}
+
+@media screen and (max-width:360px) {
+    body{
+        margin:20px 10px;
+    }
+  /*หน้าจอมีขนาดเล็กทำให้ต้องสร้าง main เป็น grid โดย attribute display เป็นนค่าเป็น grid ที่มีเพียงคอลัมเดียวเป็นแถวยาว*/
+    main{
+      display: grid;
+      grid-template-columns: 1fr;
+  
+  }
+      /*ให้ aside มี Attribute position มี value เป็น  static คือเป็น display คงที่*/ 
+     aside{
+      position: static;
+      background:red;
+      padding: 20px  20px;
+      margin: 10px 10px 10px 90px;
+     }
+  
+     .outerbox{
+      width: 130%;/*เป็นการกำหนดให้สไลด์บล็อกเป็น 130% */
+  }
+  
+  figure img{
+      width: 100%;/*เป็นการกำหนดภาพให้มีขนาด  100% */
+  }
+  
+  li a {
+      display: block;
+      color: rgb(253, 249, 249);
+      text-align: center;
+      padding:10px 8.7px;
+  }
+  nav{
+      width: 130%;/*เป็นการกำหนดให้เมนูเป็น 100% บล็อกเมนูที่สร้างไว้ขนาดพอดีกับการทำreponsive*/
+      display: grid;/*กำหนดเป็น attribute display มี value เป็น grid ให้มี */
+      grid-template-columns: 1fr;/*ให้เมนูมีลักษณะเป็นคอลัมภ์เเถวเดียว*/
+  }
+  
+  }
+
